@@ -29,6 +29,7 @@ in terminal:
 * run `python3 -m venv wonderSplashVenv` - this creates a new virtual environment called wonderSplashVenv in your folder. a virtual environment is basically a separate version of Python that isn't the default version that comes with your computer. it's a good idea to make a new virtual environment for every big Python project you do, so if you have a lot of different modules for different python projects, they don't conflict with each other version-wise.
     * if that doesn't work, try just `python` instead of `python3`
 * run `source wonderSplashVenv/bin/activate` - this activates the wonderSplashVenv virtual environment, so it will now be the version of Python you're using.
+    * for windows, use: '.\wonderSplashVenv\Scripts\activate'
     * (you can type `source deactivate` to disable it and go back to your system/default version of Python. you don't need to do this though. new terminals will start without it.)
 * run `pip install -r requirements.txt` - this installs all the Python modules you'll need into the wonderSplashVenv virtual environment you made. it does this by looking at requirements.txt which is a list of modules.
 
