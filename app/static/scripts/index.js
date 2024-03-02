@@ -1,35 +1,35 @@
 let selectedStyle = "";
 let selectedMusic = -1;
 
+function selectElement(element, query) {
+    Array.from(document.querySelectorAll(query)).forEach((e) => {
+    e.classList.remove("selected");
+   });
+
+   element.classList.add("selected");
+}
+
 // from https://stackoverflow.com/a/35867833
-function toggleStylesheet(stylesheetName) {
+function toggleStylesheet(li, stylesheetName) {
+    selectElement(li, "li.cssToggle");
+
     // if its currently active stylesheet, do nothing
     if (stylesheetName === selectedStyle) {
         return;
     }
 
+    const existingStylesheet = document.getElementById(selectedStyle);
     selectedStyle = stylesheetName;
     const href = "/static/css/" + stylesheetName;
 
-    // turn on stylesheetName
-    let existingNode = 0; //get existing stylesheet node if it already exists:
-    for (let i = 0; i < document.styleSheets.length; i++) {
-        if (
-            document.styleSheets[i].href &&
-            document.styleSheets[i].href.indexOf(href) > -1
-        )
-            existingNode = document.styleSheets[i].ownerNode;
-    }
-    console.log(existingNode);
-
     // delete other stylesheet
-    if (existingNode !== 0) {
-        existingNode.parentNode.removeChild(existingNode);
+    if (existingStylesheet !== null) {
+        existingStylesheet.disabled = true;
     }
 
     // add this stylesheet
-    console.log(existingNode);
     const link = document.createElement("link");
+    link.id = stylesheetName;
     link.rel = "stylesheet";
     link.type = "text/css";
     link.href = href;
@@ -38,15 +38,16 @@ function toggleStylesheet(stylesheetName) {
 
 Array.from(document.querySelectorAll("li.cssToggle")).forEach((li) => {
     li.addEventListener("click", () => {
-        toggleStylesheet(li.innerText);
+        toggleStylesheet(li, li.innerText);
     });
 });
 
 Array.from(document.querySelectorAll("li.musicToggle")).forEach((li, i) => {
     li.addEventListener("click", () => {
         mainScript.musicManager.playSoundtrack(i);
+        selectElement(li, "li.musicToggle");
     });
 });
 
-mainScript.musicManager.playSoundtrack(selectedMusic);
-toggleStylesheet("template_city1.css");
+const start = document.getElementById("startStyle");
+toggleStylesheet(start, start.innerText);

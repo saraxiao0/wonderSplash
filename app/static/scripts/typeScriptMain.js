@@ -2269,29 +2269,25 @@ var mainScript = (() => {
       }
       if (this.activeSoundtrack !== -1) {
         this.soundtracks[this.activeSoundtrack].forEach((howl) => {
-          howl.fade(howl.volume(), 0, 3e3);
+          howl.fade(howl.volume(), 0, 5);
         });
       }
-      setTimeout(() => {
-        this.soundtracks[whichSoundtrack].forEach((howl) => {
-          let maxVolume = howl["maxVolume"];
-          if (maxVolume === void 0) {
-            maxVolume = 1;
-          }
-          if (howl.state() === "unloaded") {
-            howl.load();
-            howl.onplay = () => {
-              setTimeout(() => {
-                howl.fade(0, maxVolume, 7e3);
-              }, 100);
-            };
-          } else {
-            setTimeout(() => {
-              howl.fade(0, maxVolume, 7e3);
-            }, 100);
-          }
-        });
-      }, 1e3);
+      this.soundtracks[whichSoundtrack].forEach((howl) => {
+        let maxVolume = howl["maxVolume"];
+        if (maxVolume === void 0) {
+          maxVolume = 1;
+        }
+        if (howl.state() === "unloaded") {
+          howl.load();
+          howl.onplay = () => {
+            howl.fade(0, maxVolume, 5);
+          };
+        } else {
+          setTimeout(() => {
+            howl.fade(0, maxVolume, 5);
+          });
+        }
+      });
       this.activeSoundtrack = whichSoundtrack;
     }
   };

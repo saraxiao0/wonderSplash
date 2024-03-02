@@ -117,4 +117,10 @@ a {
     display: inline-block;
     margin: 10px;
     cursor: pointer;
+    border-radius: 10px;
+}
+
+.selected {
+    border: 5px solid gold;
+    background-color: #ffd;
 }

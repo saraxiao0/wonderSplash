@@ -1,4 +1,4 @@
-import {Howl} from "howler";
+import { Howl } from "howler";
 
 function addMaxVolume(howl: Howl, maxVolume: number) {
     howl["maxVolume"] = maxVolume;
@@ -14,8 +14,8 @@ const introMusic: Array<Howl> = [
         rate: 1,
 
         autoplay: true,
-        volume: 0
-    })
+        volume: 0,
+    }),
 ];
 
 /*
@@ -50,26 +50,48 @@ const dormMusic: Array<Howl> = [
 ]; */
 
 type MusicManager = {
-    activeSoundtrack: number,
-    soundtracks: Array<Array<Howl>>,
-    playSoundtrack: Function
-}
+    activeSoundtrack: number;
+    soundtracks: Array<Array<Howl>>;
+    playSoundtrack: Function;
+};
 
 const musicManager: MusicManager = {
     activeSoundtrack: -1,
     soundtracks: [silence, introMusic],
 
-    playSoundtrack: function(whichSoundtrack: number) {
+    playSoundtrack: function (whichSoundtrack: number) {
         if (whichSoundtrack === this.activeSoundtrack) {
             return;
         }
 
         if (this.activeSoundtrack !== -1) {
-            this.soundtracks[this.activeSoundtrack].forEach(howl => {
-                howl.fade(howl.volume(), 0, 3000);
-            })
+            this.soundtracks[this.activeSoundtrack].forEach((howl) => {
+                howl.fade(howl.volume(), 0, 5);
+            });
         }
 
+        this.soundtracks[whichSoundtrack].forEach((howl) => {
+            let maxVolume = howl["maxVolume"];
+            if (maxVolume === undefined) {
+                maxVolume = 1.0;
+            }
+
+            if (howl.state() === "unloaded") {
+                howl.load();
+
+                howl.onplay = () => {
+                    // otherwise volume change not applied
+                    // see https://github.com/goldfire/howler.js/issues/1603 ?
+                    howl.fade(0, maxVolume, 5);
+                };
+            } else {
+                setTimeout(() => {
+                    howl.fade(0, maxVolume, 5);
+                });
+            }
+        });
+
+        /*
         setTimeout(() => {
             this.soundtracks[whichSoundtrack].forEach(howl => {
                 let maxVolume = howl["maxVolume"];
@@ -97,12 +119,10 @@ const musicManager: MusicManager = {
                     }, 100);
                 }
             })
-        }, 1000);
+        }, 1000); */
 
         this.activeSoundtrack = whichSoundtrack;
-    }
-}
-
-export {
-    musicManager
+    },
 };
+
+export { musicManager };
