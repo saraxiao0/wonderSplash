@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --color1: #fabb33;
+    --colorb: #fcdd55;
+    --color2: #fff;
+    --shadow: #ddd;
+}
+
+/* General Styles */
+
+body {
+    margin: 0px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 100%;
+    background-color: var(--color1);
+    min-width: 315px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+div {
+    margin: 0px;
+}
+
+a, a:focus, a:active {
+     text-decoration: none;
+     color: inherit;
+}
+a p:hover {
+    text-decoration: underline;
+}
+
+form input[type="text"],input[type="email"],input[type="password"] {
+    width: 90%;
+    max-width: 350px;
+}
+
+input[type="submit"] {
+    font-family: Montserrat;
+}
+
+/* Style Classes */
+
+.smalltext {
+  font-size: 75%;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Header */
+
+#header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color2);
+
+    height: auto;
+    border-bottom: 3px solid var(--shadow);
+    /* font-size: 100%; */
+    padding: 3px;
+}
+
+#logo {
+    user-select: none;
+    font-family: 'Fredoka One';
+    font-size: 1.5em;
+}
+
+/* Content */
+
+#content {
+    width: 80%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 8px;
+}
+
+#content>div {
+    margin: 20px;
+    padding: 15px;
+    background-color: var(--color2);
+    border-radius: 5px;
+    min-width: 240px;
+}
+
+#content .button {
+    text-align: center;
+    border-radius: 15px;
+    background-color: var(--colorb);
+    border: 3px solid var(--color2);
+    max-width: 250px;
+    cursor: pointer;
+}
+.button>a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.roommate>p {
+    padding-left: 10px;
+}
+
+.roommate:hover .hidden {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+
+
+/* Footer */
+
+#footer {
+    padding: 1px 10px;
+
+    background-color: var(--color2);
+    border-top: 2px solid var(--shadow);
+}

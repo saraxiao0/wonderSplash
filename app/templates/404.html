@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>404 Error</h1>
+
+    <div>
+        <h2>We're sorry.</h2>
+        <p>The page you requested could not be found.</p>
+    </div>
+
+    <div class="button" onclick="window.location.href='{{ url_for('index') }}';"><a href="{{ url_for('index') }}">Return</a></div>
+
+{% endblock %}
