@@ -111,9 +111,10 @@ a {
     cursor: pointer;
 }
 
-.cssToggle {
+.liButton {
     background-color: #ffffff;
     padding: 10px;
     display: inline-block;
     margin: 10px;
+    cursor: pointer;
 }

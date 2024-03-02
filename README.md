@@ -52,3 +52,5 @@ to save your changes, in terminal or git bash or whatever:
     * you may need to add/commit your changes before you pull, or you'll get a warning about how they'll be overridden
 
 you can also use the git or vscode gui but I'm not super familiar with them :\
+
+---

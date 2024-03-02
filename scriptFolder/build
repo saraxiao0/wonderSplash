@@ -1,0 +1,6 @@
+# npx esbuild index.js --bundle --minify --outfile=../app/static/scripts/typeScriptMain.js --global-name=mainScript
+npx esbuild index.js --bundle --outfile=../app/static/scripts/typeScriptMain.js --global-name=mainScript
+
+# make script globally accessible
+# from https://stackoverflow.com/questions/64806255/how-to-expose-a-class-to-the-global-scope-with-esbuild
+echo "window.mainScript = mainScript;" >> ../app/static/scripts/typeScriptMain.js
