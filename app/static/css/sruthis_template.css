@@ -1,9 +1,7 @@
 #lofi-main {
-  background-image: url("https://media.rnztools.nz/rnz/image/upload/s--9d8MWQyH--/c_scale,f_auto,q_auto,w_1050/v1673917056/4LF1EO1_l_intro_1647359651_jpg");
-}
-
-img {
+  background-image: url("https://media.rnztools.nz/rnz/image/upload/s--9d8MWQyH--/c_scale,f_auto,q_auto,w_200,h_300/v1673917056/4LF1EO1_l_intro_1647359651_jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 1903px;
   height: 854px;
-  object-fit: fill;
 }
