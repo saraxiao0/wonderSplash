@@ -18,6 +18,9 @@ EITHER:
 OR:
 
 * go to terminal, type in `git clone https://github.com/saraxiao0/wonderSplash.git`
+
+--
+
 * you may be prompted to enter your username + password in the terminal. enter your username but instead of your normal github password enter your personal access token.
 
 ----
@@ -36,3 +39,14 @@ in terminal:
   * the app should show up
 * if on a Mac (OSX), use `flask run --host=0.0.0.0`
   * then instead of `http://127.0.0.1:5000`, use the url `http://0.0.0.0:5000`
+
+----
+
+to save your changes, in terminal or git bash or whatever:
+
+* run `git add .` --- this will add all the changes you've made to the next commit you make
+* run `git commit -m "[tile of commit, short message describing what it does]"` --- this will bundle all your added changes into a commit.
+  * you can use `git log` (`q` to quit) to see all the commits everyone has made to the project. you should see your commit as the most recent one
+* run `git push` --- this will upload all the changes you've made to the Github version of the project
+  * you may need to run `git pull` first, which downloads all the changes from the Github version of the project, before you push
+    * you may need to add/commit your changes before you pull, or you'll get a warning about how they'll be overridden
