@@ -4,6 +4,7 @@ Steps:
 
 * Generate a github personal access token! This lets you use Github commands from the command line/terminal.
 * From your GitHub account, go to Settings → Developer Settings → Personal Access Token → Tokens (classic) → Generate New Token (Give your password) → Fillup the form → click Generate token → Copy the generated Token, it will be something like ghp_sFhFsSHhTzMDreGRLjmks4Tzuzgthdvfsrta
+   * when filling up the form you can just check yes to every single permission, it's fine.
 * SAVE THIS TOKEN SOMEWHERE. It is equivalent to your password. 
 
 * Click the green Code button
