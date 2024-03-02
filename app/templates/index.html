@@ -1,9 +1,41 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Welcome to wonderSplash</h1>
+<div id="lofi-main">
+<ul>
+    <li class="cssToggle"><a>template_example.css</a></li>
+</ul>
 
-    <div>
-    </div>
+</div>
+
+<script>
+
+function toggleStylesheet( href){
+    var existingNode=0 //get existing stylesheet node if it already exists:
+    for(var i = 0; i < document.styleSheets.length; i++){
+        if( document.styleSheets[i].href && document.styleSheets[i].href.indexOf(href)>-1 ) existingNode = document.styleSheets[i].ownerNode
+    }
+    const onoff = !existingNode //toggle on or off 
+    if(onoff){ //TURN ON:
+        if(existingNode) return onoff //already exists so cancel now
+        var link  = document.createElement('link');
+        link.rel  = 'stylesheet';
+        link.type = 'text/css';
+        link.href = href;
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }else{ //TURN OFF:
+        if(existingNode) existingNode.parentNode.removeChild(existingNode)
+    }
+    return onoff
+}
+
+Array.from(document.querySelectorAll("li.cssToggle")).forEach((li) => {
+    console.log(li);
+   li.addEventListener("click", () => {
+    toggleStylesheet("static/css/" + li.innerText)
+   });
+});
+
+</script>
 
 {% endblock %}

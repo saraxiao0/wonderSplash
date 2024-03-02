@@ -73,19 +73,10 @@ input[type="submit"] {
 
 /* Content */
 
-#content {
-    width: 80%;
-    margin-left: 5%;
-    margin-right: 5%;
-    padding: 8px;
-}
-
-#content>div {
-    margin: 20px;
-    padding: 15px;
+#lofi-main {
     background-color: var(--color2);
-    border-radius: 5px;
     min-width: 240px;
+    height: 100vh;
 }
 
 #content .button {
@@ -102,13 +93,6 @@ input[type="submit"] {
     height: 100%;
 }
 
-.roommate>p {
-    padding-left: 10px;
-}
-
-.roommate:hover .hidden {
-  display: block;
-}
 .hidden {
   display: none;
 }
@@ -121,4 +105,15 @@ input[type="submit"] {
 
     background-color: var(--color2);
     border-top: 2px solid var(--shadow);
+}
+
+a {
+    cursor: pointer;
+}
+
+.cssToggle {
+    background-color: #ffffff;
+    padding: 10px;
+    display: inline-block;
+    margin: 10px;
 }
