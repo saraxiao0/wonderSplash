@@ -10,6 +10,9 @@ body.rose_city .rose_city {
 body.rose_city .selected {
   border: 5px solid #c42494;
   background-color: #c78bb5;
+    font-family: "Arvo", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 
