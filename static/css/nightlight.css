@@ -10,10 +10,11 @@ body.nightlight .nightlight {
 body.nightlight .selected {
   border: 5px solid #A7244D;
   background-color: #de9eb2;
-  font-family: "Noto Sans Display", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 100;
   font-style: normal;
   font-variation-settings:
-    "wdth" 80.3;
+    "wdth" 100,
+    "YTLC" 500;
 }
