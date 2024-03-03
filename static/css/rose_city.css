@@ -1,0 +1,8 @@
+#lofi-main {
+    background-image: url("/static/assets/rose_city.jpg");
+}
+
+.rose_city {
+    display: block !important;
+    color: #777;
+}

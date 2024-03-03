@@ -1,0 +1,8 @@
+#lofi-main {
+    background-image: url("/static/assets/figurine.jpg");
+}
+
+.figurine {
+    display: block !important;
+    color: #777;
+}

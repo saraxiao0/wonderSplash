@@ -1,0 +1,8 @@
+#lofi-main {
+    background-image: url("/static/assets/dusk_view.jpg");
+}
+
+.dusk_view {
+    display: block !important;
+    color: #777;
+}

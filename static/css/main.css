@@ -82,6 +82,7 @@ input[type="submit"] {
     min-width: 240px;
     height: 125vh;
     background-position: center;
+    background-size: cover;
 }
 
 #content .button {

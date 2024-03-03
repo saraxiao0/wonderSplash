@@ -1,0 +1,8 @@
+#lofi-main {
+    background-image: url("/static/assets/nightlight.jpg");
+}
+
+.nightlight {
+    display: block !important;
+    color: #777;
+}

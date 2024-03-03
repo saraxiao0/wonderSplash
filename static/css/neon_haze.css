@@ -1,0 +1,8 @@
+#lofi-main {
+    background-image: url("/static/assets/neon_haze.jpg");
+}
+
+.neon_haze {
+    display: block !important;
+    color: #777;
+}
