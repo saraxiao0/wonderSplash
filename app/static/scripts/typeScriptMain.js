@@ -2260,9 +2260,27 @@ var mainScript = (() => {
       volume: 0
     })
   ];
+  var waterMusic = [
+    new import_howler.Howl({
+      src: ["/static/assets/river1.ogg"],
+      loop: true,
+      rate: 1,
+      autoplay: true,
+      volume: 0
+    })
+  ];
+  var swimmingMusic = [
+    new import_howler.Howl({
+      src: ["/static/assets/swimming.ogg"],
+      loop: true,
+      rate: 1,
+      autoplay: true,
+      volume: 0
+    })
+  ];
   var musicManager = {
     activeSoundtrack: -1,
-    soundtracks: [silence, introMusic],
+    soundtracks: [silence, introMusic, waterMusic, swimmingMusic],
     playSoundtrack: function(whichSoundtrack) {
       if (whichSoundtrack === this.activeSoundtrack) {
         return;

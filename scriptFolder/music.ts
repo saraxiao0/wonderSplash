@@ -18,6 +18,28 @@ const introMusic: Array<Howl> = [
     }),
 ];
 
+const waterMusic: Array<Howl> = [
+    new Howl({
+        src: ["/static/assets/river1.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0,
+    }),
+];
+
+const swimmingMusic: Array<Howl> = [
+    new Howl({
+        src: ["/static/assets/swimming.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0,
+    }),
+];
+
 /*
 const dormMusic: Array<Howl> = [
     addMaxVolume(new Howl({
@@ -57,7 +79,7 @@ type MusicManager = {
 
 const musicManager: MusicManager = {
     activeSoundtrack: -1,
-    soundtracks: [silence, introMusic],
+    soundtracks: [silence, introMusic, waterMusic, swimmingMusic],
 
     playSoundtrack: function (whichSoundtrack: number) {
         if (whichSoundtrack === this.activeSoundtrack) {
