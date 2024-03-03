@@ -2323,8 +2323,10 @@ var mainScript = (() => {
       }
       if (dropdown.classList.contains("hidden")) {
         dropdown.classList.remove("hidden");
+        button.innerText = button.innerText + " \u21AA";
       } else {
         dropdown.classList.add("hidden");
+        button.innerText = button.innerText.substring(0, button.innerText.length - 2);
       }
     });
   }
