@@ -19,4 +19,5 @@ body.galaxy1 .selected {
 body.galaxy1 .selected {
   border: 5px solid #845b5c;
   background-color: #827172;
+  color: white;
 }

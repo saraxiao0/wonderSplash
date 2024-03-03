@@ -10,4 +10,5 @@ body.figurine .figurine {
 body.figurine .selected {
   border: 5px solid #49886f;
   background-color: #6a8a7d;
+  color: white;
 }

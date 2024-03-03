@@ -10,4 +10,5 @@ body.moonfield .moonfield {
 body.moonfield .selected {
   border: 5px solid #540464;
   background-color: #5a425e;
+  color: white;
 }
