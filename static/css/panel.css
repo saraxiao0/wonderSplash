@@ -1,0 +1,30 @@
+.closeButton {
+  float: right;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.panelFull {
+  z-index: 20;
+  padding-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 4px double #6cf;
+  border-radius: 5px;
+
+  font-size: 90%;
+
+  overflow: scroll;
+  padding: 10px;
+
+  width: 500px;
+  height: fit-content;
+  margin: auto;
+}
+
+.absoluteAlign {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
