@@ -6,3 +6,8 @@ body.dusk_view .dusk_view {
     display: block !important;
     color: #010101;
 }
+
+body.dusk_view .selected {
+  border: 5px solid #d83a34;
+  background-color: #de918e;
+}

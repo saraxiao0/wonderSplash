@@ -7,3 +7,8 @@ body.neon_haze .neon_haze {
     display: block !important;
     color: #010101;
 }
+
+body.neon_haze .selected {
+  border: 5px solid #cc239a;
+  background-color: #cf88ba;
+}

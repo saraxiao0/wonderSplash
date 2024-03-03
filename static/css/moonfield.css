@@ -6,3 +6,9 @@ body.moonfield .moonfield {
     display: block !important;
     color: #010101;
 }
+
+body.moonfield .selected {
+  border: 5px solid #540464;
+  background-color: #5a425e;
+  color: white;
+}
