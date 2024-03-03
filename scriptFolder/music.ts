@@ -5,28 +5,26 @@ function addMaxVolume(howl: Howl, maxVolume: number) {
     return howl;
 }
 
-const silence: Array<Howl> = [];
-
 const introMusic: Array<Howl> = [
     new Howl({
         src: ["/static/assets/roaming_two.ogg"],
         loop: true,
         rate: 1,
 
-        autoplay: true,
-        volume: 0,
+        html5: true,
+        preload: "metadata",
     }),
 ];
 
 const waterMusic: Array<Howl> = [
-    new Howl({
+    addMaxVolume(new Howl({
         src: ["/static/assets/river1.ogg"],
         loop: true,
         rate: 1,
 
-        autoplay: true,
-        volume: 0,
-    }),
+        html5: true,
+        preload: "metadata",
+    }), 1.5),
 ];
 
 const swimmingMusic: Array<Howl> = [
@@ -35,63 +33,25 @@ const swimmingMusic: Array<Howl> = [
         loop: true,
         rate: 1,
 
-        autoplay: true,
-        volume: 0,
+        html5: true,
+        preload: "metadata",
     }),
 ];
 
-/*
-const dormMusic: Array<Howl> = [
-    addMaxVolume(new Howl({
-        src: ["assets/music_real/out_of_bounds.ogg"],
-        loop: true,
-
-        autoplay: true,
-        volume: 0,
-        html5: true,
-        preload: "metadata"
-    }), 0.9),
-    addMaxVolume(new Howl({
-        src: ["assets/music_real/room_tone.ogg"],
-        loop: true,
-
-        autoplay: true,
-        volume: 0,
-        html5: true,
-        preload: "metadata"
-    }), 0.2),
-    addMaxVolume(new Howl({
-        src: ["assets/music_real/buzzing_light.ogg"],
-        loop: true,
-
-        autoplay: true,
-        volume: 0,
-        html5: true,
-        preload: "metadata"
-    }), 0.1)
-]; */
-
 type MusicManager = {
-    activeSoundtrack: number;
+    activeSoundtracks: Array<number>;
     soundtracks: Array<Array<Howl>>;
     playSoundtrack: Function;
+    pauseSoundtrack: Function;
+    toggleSoundtrack: Function;
 };
 
 const musicManager: MusicManager = {
-    activeSoundtrack: -1,
-    soundtracks: [silence, introMusic, waterMusic, swimmingMusic],
+    activeSoundtracks: [],
+    soundtracks: [introMusic, waterMusic, swimmingMusic],
 
     playSoundtrack: function (whichSoundtrack: number) {
-        if (whichSoundtrack === this.activeSoundtrack) {
-            return;
-        }
-
-        if (this.activeSoundtrack !== -1) {
-            this.soundtracks[this.activeSoundtrack].forEach((howl) => {
-                howl.fade(howl.volume(), 0, 5);
-            });
-        }
-
+        console.log("play", whichSoundtrack);
         this.soundtracks[whichSoundtrack].forEach((howl) => {
             let maxVolume = howl["maxVolume"];
             if (maxVolume === undefined) {
@@ -100,50 +60,27 @@ const musicManager: MusicManager = {
 
             if (howl.state() === "unloaded") {
                 howl.load();
-
-                howl.onplay = () => {
-                    // otherwise volume change not applied
-                    // see https://github.com/goldfire/howler.js/issues/1603 ?
-                    howl.fade(0, maxVolume, 5);
-                };
-            } else {
-                setTimeout(() => {
-                    howl.fade(0, maxVolume, 5);
-                });
             }
+            howl.play();
         });
 
-        /*
-        setTimeout(() => {
-            this.soundtracks[whichSoundtrack].forEach(howl => {
-                let maxVolume = howl["maxVolume"];
-                if (maxVolume === undefined) {
-                    maxVolume = 1.0;
-                }
+        this.activeSoundtracks.push(whichSoundtrack);
+    },
 
-                if (howl.state() === "unloaded") {
-                    howl.load();
+    pauseSoundtrack: function (whichSoundtrack: number) {
+        console.log("paused", whichSoundtrack);
+        this.soundtracks[whichSoundtrack].forEach((howl) => {
+            howl.pause();
+        });
+        this.activeSoundtracks.splice(this.activeSoundtracks.indexOf(whichSoundtrack), 1); 
+    },
 
-                    howl.onplay = () => {
-                        setTimeout(() => {
-                            // otherwise volume change not applied
-                            // see https://github.com/goldfire/howler.js/issues/1603 ?
-                            howl.fade(0, maxVolume, 7000);
-                        }, 100);
-                    }
-
-                }
-                else {
-                    setTimeout(() => {
-                        // otherwise volume change not applied
-                        // see https://github.com/goldfire/howler.js/issues/1603 ?
-                        howl.fade(0, maxVolume, 7000);
-                    }, 100);
-                }
-            })
-        }, 1000); */
-
-        this.activeSoundtrack = whichSoundtrack;
+    toggleSoundtrack: function (whichSoundtrack: number) {
+        if (!this.activeSoundtracks.includes(whichSoundtrack)) {
+            this.playSoundtrack(whichSoundtrack);
+        } else {
+            this.pauseSoundtrack(whichSoundtrack);
+        }
     },
 };
 

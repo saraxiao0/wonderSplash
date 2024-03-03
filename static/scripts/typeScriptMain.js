@@ -2245,51 +2245,48 @@ var mainScript = (() => {
   // index.js
   var scriptFolder_exports = {};
   __export(scriptFolder_exports, {
-    musicManager: () => musicManager
+    musicManager: () => musicManager,
+    toggleDropdown: () => toggleDropdown
   });
 
   // music.ts
   var import_howler = __toESM(require_howler());
-  var silence = [];
+  function addMaxVolume(howl, maxVolume) {
+    howl["maxVolume"] = maxVolume;
+    return howl;
+  }
   var introMusic = [
     new import_howler.Howl({
       src: ["/static/assets/roaming_two.ogg"],
       loop: true,
       rate: 1,
-      autoplay: true,
-      volume: 0
+      html5: true,
+      preload: "metadata"
     })
   ];
   var waterMusic = [
-    new import_howler.Howl({
+    addMaxVolume(new import_howler.Howl({
       src: ["/static/assets/river1.ogg"],
       loop: true,
       rate: 1,
-      autoplay: true,
-      volume: 0
-    })
+      html5: true,
+      preload: "metadata"
+    }), 1.5)
   ];
   var swimmingMusic = [
     new import_howler.Howl({
       src: ["/static/assets/swimming.ogg"],
       loop: true,
       rate: 1,
-      autoplay: true,
-      volume: 0
+      html5: true,
+      preload: "metadata"
     })
   ];
   var musicManager = {
-    activeSoundtrack: -1,
-    soundtracks: [silence, introMusic, waterMusic, swimmingMusic],
+    activeSoundtracks: [],
+    soundtracks: [introMusic, waterMusic, swimmingMusic],
     playSoundtrack: function(whichSoundtrack) {
-      if (whichSoundtrack === this.activeSoundtrack) {
-        return;
-      }
-      if (this.activeSoundtrack !== -1) {
-        this.soundtracks[this.activeSoundtrack].forEach((howl) => {
-          howl.fade(howl.volume(), 0, 5);
-        });
-      }
+      console.log("play", whichSoundtrack);
       this.soundtracks[whichSoundtrack].forEach((howl) => {
         let maxVolume = howl["maxVolume"];
         if (maxVolume === void 0) {
@@ -2297,18 +2294,42 @@ var mainScript = (() => {
         }
         if (howl.state() === "unloaded") {
           howl.load();
-          howl.onplay = () => {
-            howl.fade(0, maxVolume, 5);
-          };
-        } else {
-          setTimeout(() => {
-            howl.fade(0, maxVolume, 5);
-          });
         }
+        howl.play();
       });
-      this.activeSoundtrack = whichSoundtrack;
+      this.activeSoundtracks.push(whichSoundtrack);
+    },
+    pauseSoundtrack: function(whichSoundtrack) {
+      console.log("paused", whichSoundtrack);
+      this.soundtracks[whichSoundtrack].forEach((howl) => {
+        howl.pause();
+      });
+      this.activeSoundtracks.splice(this.activeSoundtracks.indexOf(whichSoundtrack), 1);
+    },
+    toggleSoundtrack: function(whichSoundtrack) {
+      if (!this.activeSoundtracks.includes(whichSoundtrack)) {
+        this.playSoundtrack(whichSoundtrack);
+      } else {
+        this.pauseSoundtrack(whichSoundtrack);
+      }
     }
   };
+
+  // utility.ts
+  function toggleDropdown(containerName) {
+    const button = document.querySelector("#" + containerName + " > button");
+    button?.addEventListener("click", (event) => {
+      const dropdown = document.querySelector("#" + containerName + " > ul");
+      if (dropdown === null) {
+        return;
+      }
+      if (dropdown.classList.contains("hidden")) {
+        dropdown.classList.remove("hidden");
+      } else {
+        dropdown.classList.add("hidden");
+      }
+    });
+  }
   return __toCommonJS(scriptFolder_exports);
 })();
 /*! Bundled license information:

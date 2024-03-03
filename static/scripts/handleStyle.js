@@ -1,5 +1,4 @@
 let selectedStyle = "";
-let selectedMusic = -1;
 
 function selectElement(element, query) {
     Array.from(document.querySelectorAll(query)).forEach((e) => {
@@ -56,13 +55,6 @@ function addP5(scriptName) {
     p5Container.appendChild(ifrm);
 }
 
-Array.from(document.querySelectorAll("li.musicToggle")).forEach((li, i) => {
-    li.addEventListener("click", () => {
-        mainScript.musicManager.playSoundtrack(i);
-        selectElement(li, "li.musicToggle");
-    });
-});
-
 Array.from(document.querySelectorAll("li.cssToggle")).forEach((li) => {
     const name = li.getAttribute("css-name");
     addStylesheet(name);
@@ -73,16 +65,4 @@ Array.from(document.querySelectorAll("li.cssToggle")).forEach((li) => {
 const start = document.querySelector(".startStyle");
 toggleStylesheet(start, start.getAttribute("css-name"));
 
-function toggleDropdown(containerName) {
-    const button = document.querySelector("#" + containerName + " > button");
-    button.addEventListener("click", (event) => {
-        const dropdown = document.querySelector("#" + containerName + " > ul");
-        if (dropdown.classList.contains("hidden")) {
-            dropdown.classList.remove("hidden");
-        } else {
-            dropdown.classList.add("hidden");
-        }
-    });
-}
-toggleDropdown("musicContainer");
-toggleDropdown("styleContainer");
+mainScript.toggleDropdown("styleContainer");
