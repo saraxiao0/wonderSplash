@@ -38,6 +38,39 @@ const swimmingMusic: Array<Howl> = [
     }),
 ];
 
+const binauralBeats: Array<Howl> = [
+    new Howl({
+        src: ["/static/assets/binaural_beats.ogg"],
+        loop: true,
+        rate: 1,
+
+        html5: true,
+        preload: "metadata",
+    }),
+];
+
+const synthwave: Array<Howl> = [
+    new Howl({
+        src: ["/static/assets/synthwave.ogg"],
+        loop: true,
+        rate: 1,
+
+        html5: true,
+        preload: "metadata",
+    }),
+];
+
+const piano: Array<Howl> = [
+    new Howl({
+        src: ["/static/assets/piano.ogg"],
+        loop: true,
+        rate: 1,
+
+        html5: true,
+        preload: "metadata",
+    }),
+];
+
 type MusicManager = {
     activeSoundtracks: Array<number>;
     soundtracks: Array<Array<Howl>>;
@@ -49,7 +82,7 @@ type MusicManager = {
 
 const musicManager: MusicManager = {
     activeSoundtracks: [],
-    soundtracks: [introMusic, waterMusic, swimmingMusic],
+    soundtracks: [introMusic, waterMusic, swimmingMusic, binauralBeats, synthwave, piano],
 
     playSoundtrack: function (whichSoundtrack: number) {
         this.soundtracks[whichSoundtrack].forEach((howl) => {

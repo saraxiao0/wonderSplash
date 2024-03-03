@@ -2282,9 +2282,36 @@ var mainScript = (() => {
       preload: "metadata"
     })
   ];
+  var binauralBeats = [
+    new import_howler.Howl({
+      src: ["/static/assets/binaural_beats.ogg"],
+      loop: true,
+      rate: 1,
+      html5: true,
+      preload: "metadata"
+    })
+  ];
+  var synthwave = [
+    new import_howler.Howl({
+      src: ["/static/assets/synthwave.ogg"],
+      loop: true,
+      rate: 1,
+      html5: true,
+      preload: "metadata"
+    })
+  ];
+  var piano = [
+    new import_howler.Howl({
+      src: ["/static/assets/piano.ogg"],
+      loop: true,
+      rate: 1,
+      html5: true,
+      preload: "metadata"
+    })
+  ];
   var musicManager = {
     activeSoundtracks: [],
-    soundtracks: [introMusic, waterMusic, swimmingMusic],
+    soundtracks: [introMusic, waterMusic, swimmingMusic, binauralBeats, synthwave, piano],
     playSoundtrack: function(whichSoundtrack) {
       this.soundtracks[whichSoundtrack].forEach((howl) => {
         let maxVolume = howl["maxVolume"];

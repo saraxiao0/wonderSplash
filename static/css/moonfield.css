@@ -1,0 +1,8 @@
+#lofi-main {
+    background-image: url("/static/assets/moonfield.jpg");
+}
+
+.moonfield {
+    display: block !important;
+    color: #777;
+}
