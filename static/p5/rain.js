@@ -17,6 +17,10 @@ function draw() {
     }
 }
 
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+}
+
 function Drop(x, y, sp) {
     var x1 = x;
     var y1 = y;
