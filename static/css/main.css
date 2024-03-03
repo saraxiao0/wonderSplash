@@ -80,7 +80,8 @@ input[type="submit"] {
 #lofi-main {
     background-color: var(--color2);
     min-width: 240px;
-    height: 100vh;
+    height: 125vh;
+    background-position: center;
 }
 
 #content .button {
@@ -177,4 +178,12 @@ button {
 #p5Container {
     width: 100%;
     height: 100%;
+}
+
+#imageCredits > div {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 0.8rem;
+    display: none;
 }

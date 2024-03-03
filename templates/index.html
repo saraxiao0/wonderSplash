@@ -1,11 +1,15 @@
 {% extends "base.html" %} {% block content %}
 <div id="lofi-main">
+    <div id="imageCredits">
+        <div class="shireens_template"><a href="https://unsplash.com/photos/black-and-brown-wooden-bench-uchsMfei3RU">Image credit: Jonathan Formento from Unsplash</a></div>
+    </div>
+
     <div id="buttonContainer">
         <div class="dropdown" id="styleContainer">
             <button type="button">STYLE</button>
             <ul class="dropdown-content hidden">
-                <li class="cssToggle liButton" id="startStyle" p5="fish"><a>template_city1.css</a></li>
-                <li class="cssToggle liButton" p5="particle"><a>shireens_template.css</a></li>
+                <li class="cssToggle liButton startStyle" p5="fish" css-name="template_city1"><a>Dawn Lake</a></li>
+                <li class="cssToggle liButton" p5="particle" css-name="shireens_template"><a>Hackney Central Station</a></li>
             </ul>
         </div>
 

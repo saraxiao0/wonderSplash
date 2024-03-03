@@ -4,3 +4,8 @@ div#lofi-main {
 div#lofi-main {
     background-size: cover;
 }
+
+.shireens_template {
+    display: block !important;
+    color: #777;
+}

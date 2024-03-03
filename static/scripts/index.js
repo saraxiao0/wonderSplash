@@ -10,7 +10,7 @@ function selectElement(element, query) {
 }
 
 function addStylesheet(stylesheetName) {
-    const href = "/static/css/" + stylesheetName;
+    const href = "/static/css/" + stylesheetName + ".css";
 
     const link = document.createElement("link");
     link.id = stylesheetName;
@@ -64,13 +64,14 @@ Array.from(document.querySelectorAll("li.musicToggle")).forEach((li, i) => {
 });
 
 Array.from(document.querySelectorAll("li.cssToggle")).forEach((li) => {
-    addStylesheet(li.innerText);
+    const name = li.getAttribute("css-name");
+    addStylesheet(name);
     li.addEventListener("click", () => {
-        toggleStylesheet(li, li.innerText);
+        toggleStylesheet(li, name);
     });
 });
-const start = document.getElementById("startStyle");
-toggleStylesheet(start, start.innerText);
+const start = document.querySelector(".startStyle");
+toggleStylesheet(start, start.getAttribute("css-name"));
 
 function toggleDropdown(containerName) {
     const button = document.querySelector("#" + containerName + " > button");
