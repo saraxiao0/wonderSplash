@@ -1,13 +1,13 @@
-#lofi-main {
+body.koi #lofi-main {
     background-image: url("/static/assets/koi.jpg");
 }
 
-.koi {
+body.koi .koi {
     display: block !important;
     color: #010101;
 }
 
-.selected {
+body.koi .selected {
   border: 5px solid #67462A;
   background-color: #EBB499;
 }

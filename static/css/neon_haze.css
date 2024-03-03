@@ -1,9 +1,9 @@
-#lofi-main {
+body.neon_haze #lofi-main {
     background-image: url("/static/assets/neon_haze.jpg");
     filter: blur(3px);
 }
 
-.neon_haze {
+body.neon_haze .neon_haze {
     display: block !important;
     color: #010101;
 }

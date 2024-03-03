@@ -1,8 +1,8 @@
-#lofi-main {
+body.figurine #lofi-main {
     background-image: url("/static/assets/figurine.jpg");
 }
 
-.figurine {
+body.figurine .figurine {
     display: block !important;
     color: #010101;
 }

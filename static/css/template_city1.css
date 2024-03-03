@@ -1,19 +1,19 @@
-#lofi-main {
+body.template_city1 #lofi-main {
     background-image: url("/static/assets/city1.jpg");
 }
 
-button {
+body.template_city1 button {
     background-color: rgba(100, 200, 250, 0.7);
 }
-button:hover {
+body.template_city1 button:hover {
     background-color: rgba(100, 200, 250, 1);
 }
 
-.dropdown-content li:hover {
+body.template_city1 .dropdown-content li:hover {
     background-color: rgba(255, 255, 255, 1);
 }
 
-.template_city1 {
+body.template_city1 .template_city1 {
     display: block !important;
     color: #010101;
 }

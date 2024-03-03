@@ -1,13 +1,13 @@
-#lofi-main {
+body.galaxy1 #lofi-main {
     background-image: url("/static/assets/galaxy1.jpg");
 }
 
-.galaxy1 {
+body.galaxy1 .galaxy1 {
     display: block !important;
     color: #010101;
 }
 
-.selected {
+body.galaxy1 .selected {
   font-family: "Orbitron", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;

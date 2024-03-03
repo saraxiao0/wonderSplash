@@ -1,8 +1,8 @@
-#lofi-main {
+body.dusk_view #lofi-main {
     background-image: url("/static/assets/dusk_view.jpg");
 }
 
-.dusk_view {
+body.dusk_view .dusk_view {
     display: block !important;
     color: #010101;
 }

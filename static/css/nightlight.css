@@ -1,13 +1,13 @@
-#lofi-main {
+body.nightlight #lofi-main {
     background-image: url("/static/assets/nightlight.jpg");
 }
 
-.nightlight {
+body.nightlight .nightlight {
     display: block !important;
     color: #010101;
 }
 
-.selected {
+body.nightlight .selected {
   border: 5px solid #A7244D;
   background-color: #D5CEF3;
 }

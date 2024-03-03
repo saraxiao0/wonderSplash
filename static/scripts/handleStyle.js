@@ -20,7 +20,6 @@ function addStylesheet(stylesheetName) {
     link.type = "text/css";
     link.href = href;
     document.getElementsByTagName("head")[0].appendChild(link);
-    link.setAttribute("disabled", "true");
 }
 
 // from https://stackoverflow.com/a/35867833
@@ -32,15 +31,15 @@ function toggleStylesheet(li, stylesheetName) {
         return;
     }
 
-    // delete other stylesheet
+    // remove body class for other stylesheet
     const existingStylesheet = document.getElementById(selectedStyle);
     if (existingStylesheet !== null) {
-        existingStylesheet.setAttribute("disabled", "true");
+        document.body.classList.remove(selectedStyle);
     }
 
-    // add this stylesheet
+    // add body class for this stylesheet
     selectedStyle = stylesheetName;
-    document.getElementById(selectedStyle).removeAttribute("disabled");
+    document.body.classList.add(selectedStyle);
 
     const scriptName = li.getAttribute("p5");
     addP5(scriptName);
