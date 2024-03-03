@@ -11,4 +11,7 @@ body.figurine .selected {
   border: 5px solid #49886f;
   background-color: #6a8a7d;
   color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }

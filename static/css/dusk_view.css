@@ -10,4 +10,7 @@ body.dusk_view .dusk_view {
 body.dusk_view .selected {
   border: 5px solid #d83a34;
   background-color: #de918e;
+  font-family: "Forum", serif;
+  font-weight: 400;
+  font-style: normal;
 }

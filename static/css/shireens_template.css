@@ -13,4 +13,7 @@ body.shireens_template .shireens_template {
 body.shireens_template .selected {
   border: 5px solid #dc245c;
   background-color: #d48aa0;
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
 }
