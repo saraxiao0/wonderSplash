@@ -69,6 +69,7 @@ function timer(seconds) {
             pauseBtn.classList.add("play");
 
             mainScript.musicManager.pauseAll();
+            deselectAll("li.musicToggle");
 
             return;
         }

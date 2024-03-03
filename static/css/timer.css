@@ -105,7 +105,17 @@ button[data-setter]:hover {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 20px;
     margin: 5px;
-    width: 300px;
 
+    width: 300px;
+}
+
+#alarmContainer .dropdown-content > div {
+    width: 300px;
+    height: 300px;
     position: relative;
+}
+
+#alarmContainer .dropdown-content > p {
+    padding: 10px;
+    background-color: white;
 }

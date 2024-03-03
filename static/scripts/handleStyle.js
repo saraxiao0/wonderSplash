@@ -1,10 +1,13 @@
 let selectedStyle = "";
 
-function selectElement(element, query) {
+function deselectAll(query) {
     Array.from(document.querySelectorAll(query)).forEach((e) => {
         e.classList.remove("selected");
     });
+}
 
+function selectElement(element, query) {
+    deselectAll(query);
     element.classList.add("selected");
 }
 
