@@ -62,6 +62,10 @@ function mouseReleased() {
     painting = false;
 }
 
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+}
+
 // A Path is a list of particles
 class Path {
     constructor() {

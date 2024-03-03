@@ -219,7 +219,6 @@ button:hover {
 }
 
 .zen {
-    background-color: rgba(255, 255, 255, 0.95);
     border-radius: 30px;
     border: 4px double #6cf;
     margin: 10px;
@@ -228,6 +227,10 @@ button:hover {
 .zen:hover {
     background-color: white !important;
     border-color: gold;
+}
+
+#zenModeOn {
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 #zenModeOff {
