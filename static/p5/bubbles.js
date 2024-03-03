@@ -19,6 +19,10 @@ function draw() {
     }
 }
 
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+}
+
 // Boid class
 // Methods for Separation, Cohesion, Alignment added
 class Boid {

@@ -23,6 +23,10 @@ function mouseDragged() {
     flock.addBoid(new Boid(mouseX, mouseY));
 }
 
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }
+
 // The Nature of Code
 // Daniel Shiffman
 // http://natureofcode.com

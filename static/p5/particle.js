@@ -20,6 +20,10 @@ function draw() {
     }
 }
 
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+}
+
 // this class describes the properties of a single particle.
 class Particle {
     // setting the co-ordinates, radius and the
