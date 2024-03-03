@@ -1,94 +1,94 @@
 {% extends "base.html" %} {% block content %}
-<div id="lofi-main">
-    <div id="imageCredits">
-        <div class="template_city1">
-            <a href="https://openprocessing.org/sketch/810180">Code credit: Flock of birds by Naomi Tsutae</a>
-            <br />
-            <a href="https://p5js.org/examples/simulate-flocking.html">Code credit: Flocking by p5.js and Craig Reynolds</a>
-        </div>
-        <div class="shireens_template">
-            <a href="https://unsplash.com/photos/black-and-brown-wooden-bench-uchsMfei3RU">Image credit: Jonathan Formento from Unsplash</a>
-            <br />
-            <a href="https://p5js.org/examples/simulate-particles.html">Code credit: Particles by p5.js and Sagar Arora</a>
-        </div>
-        <div class="rose_city"><a href="https://unsplash.com/photos/skyscraper-covered-with-fog-at-daytime-OrwkD-iWgqg">Image credit: Meiying Ng from Unsplash</a></div>
-        <div class="neon_haze"><a href="https://unsplash.com/photos/close-view-of-busy-city-C2CYPENZ7LA">Image credit: Nik Shuliahin from Unsplash</a></div>
-        <div class="figurine"><a href="https://unsplash.com/photos/red-haired-girl-in-green-dress-figurine-on-green-grass-during-daytime-eTMtdh85TOk">Image credit: Afif Ramdhasuma from Unsplash</a></div>
-        <div class="dusk_view"><a href="https://unsplash.com/photos/city-skyline-during-night-time-2FiXtdnVhjQ">Image credit: Jezael Melgoza from Unsplash</a></div>
-        <div class="koi">
-            <a href="https://unsplash.com/photos/photo-of-two-black-white-and-orange-koi-fish-Dksk8szLRN0">Image credit: Sora Sagano from Unsplash</a>
-            <br />
-            <a href="https://p5js.org/examples/hello-p5-flocking.html">Code credit: Flocking by p5.js and Craig Reynolds</a>
-        </div>
-        <div class="nightlight"><a href="https://unsplash.com/photos/aerial-view-photography-of-road-between-highrise-building-CAFq0pv9HjY">Image credit: Ian Valerio from Unsplash</a></div>
-        <div class="galaxy1"><a href="https://p5js.org/examples/hello-p5-drawing.html">Code credit: Drawing program by p5.js</a></div>
+
+<div id="imageCredits">
+    <div class="template_city1">
+        <a href="https://openprocessing.org/sketch/810180">Code credit: Flock of birds by Naomi Tsutae</a>
+        <br />
+        <a href="https://p5js.org/examples/simulate-flocking.html">Code credit: Flocking by p5.js and Craig Reynolds</a>
+    </div>
+    <div class="shireens_template">
+        <a href="https://unsplash.com/photos/black-and-brown-wooden-bench-uchsMfei3RU">Image credit: Jonathan Formento from Unsplash</a>
+        <br />
+        <a href="https://p5js.org/examples/simulate-particles.html">Code credit: Particles by p5.js and Sagar Arora</a>
+    </div>
+    <div class="rose_city"><a href="https://unsplash.com/photos/skyscraper-covered-with-fog-at-daytime-OrwkD-iWgqg">Image credit: Meiying Ng from Unsplash</a></div>
+    <div class="neon_haze"><a href="https://unsplash.com/photos/close-view-of-busy-city-C2CYPENZ7LA">Image credit: Nik Shuliahin from Unsplash</a></div>
+    <div class="figurine"><a href="https://unsplash.com/photos/red-haired-girl-in-green-dress-figurine-on-green-grass-during-daytime-eTMtdh85TOk">Image credit: Afif Ramdhasuma from Unsplash</a></div>
+    <div class="dusk_view"><a href="https://unsplash.com/photos/city-skyline-during-night-time-2FiXtdnVhjQ">Image credit: Jezael Melgoza from Unsplash</a></div>
+    <div class="koi">
+        <a href="https://unsplash.com/photos/photo-of-two-black-white-and-orange-koi-fish-Dksk8szLRN0">Image credit: Sora Sagano from Unsplash</a>
+        <br />
+        <a href="https://p5js.org/examples/hello-p5-flocking.html">Code credit: Flocking by p5.js and Craig Reynolds</a>
+    </div>
+    <div class="nightlight"><a href="https://unsplash.com/photos/aerial-view-photography-of-road-between-highrise-building-CAFq0pv9HjY">Image credit: Ian Valerio from Unsplash</a></div>
+    <div class="galaxy1"><a href="https://p5js.org/examples/hello-p5-drawing.html">Code credit: Drawing program by p5.js</a></div>
+</div>
+
+<button type="button" id="zenModeOff" class="zen hidden">❂</button>
+
+<div id="buttonContainer">
+    <button type="button" id="zenModeOn" class="zen">Zen Mode</button>
+
+    <div class="dropdown" id="styleContainer">
+        <button type="button">Style</button>
+        <ul class="dropdown-content hidden">
+            <li class="cssToggle startStyle" p5="fish" css-name="template_city1"><a>Dawn Lake</a></li>
+            <li class="cssToggle" p5="particle" css-name="shireens_template"><a>Hackney Central Station</a></li>
+            <li class="cssToggle" p5="particle" css-name="rose_city"><a>Rose City</a></li>
+            <li class="cssToggle" p5="particle" css-name="neon_haze"><a>Neon Haze</a></li>
+            <li class="cssToggle" p5="particle" css-name="figurine"><a>Figurine</a></li>
+            <li class="cssToggle" p5="particle" css-name="dusk_view"><a>Dusk View</a></li>
+            <li class="cssToggle" p5="bubbles" css-name="koi"><a>Koi Pond</a></li>
+            <li class="cssToggle" p5="particle" css-name="nightlight"><a>Nightlight</a></li>
+            <li class="cssToggle" p5="constellation" css-name="galaxy1"><a>Galaxy</a></li>
+        </ul>
     </div>
 
-    <button type="button" id="zenModeOff" class="zen hidden">❂</button>
+    <div class="dropdown" id="musicContainer">
+        <button type="button">Music</button>
+        <ul class="dropdown-content hidden">
+            <li class="musicToggle" music-id="0"><a>Harp</a></li>
+            <li class="musicToggle" music-id="1"><a>White Noise</a></li>
+            <li class="musicToggle startMusic" music-id="2"><a>Lofi Chill</a></li>
+        </ul>
+    </div>
 
-    <div id="buttonContainer">
-        <button type="button" id="zenModeOn" class="zen">Zen Mode</button>
-
-        <div class="dropdown" id="styleContainer">
-            <button type="button">Style</button>
-            <ul class="dropdown-content hidden">
-                <li class="cssToggle startStyle" p5="fish" css-name="template_city1"><a>Dawn Lake</a></li>
-                <li class="cssToggle" p5="particle" css-name="shireens_template"><a>Hackney Central Station</a></li>
-                <li class="cssToggle" p5="particle" css-name="rose_city"><a>Rose City</a></li>
-                <li class="cssToggle" p5="particle" css-name="neon_haze"><a>Neon Haze</a></li>
-                <li class="cssToggle" p5="particle" css-name="figurine"><a>Figurine</a></li>
-                <li class="cssToggle" p5="particle" css-name="dusk_view"><a>Dusk View</a></li>
-                <li class="cssToggle" p5="bubbles" css-name="koi"><a>Koi Pond</a></li>
-                <li class="cssToggle" p5="particle" css-name="nightlight"><a>Nightlight</a></li>
-                <li class="cssToggle" p5="constellation" css-name="galaxy1"><a>Galaxy</a></li>
-            </ul>
-        </div>
-
-        <div class="dropdown" id="musicContainer">
-            <button type="button">Music</button>
-            <ul class="dropdown-content hidden">
-                <li class="musicToggle" music-id="0"><a>Harp</a></li>
-                <li class="musicToggle" music-id="1"><a>White Noise</a></li>
-                <li class="musicToggle startMusic" music-id="2"><a>Lofi Chill</a></li>
-            </ul>
-        </div>
-
-        <div class="dropdown" id="alarmContainer">
-            <button type="button">Alarm</button>
-            <div class="dropdown-content hidden">
-                <div class="setters">
-                    <div class="minutes-set">
-                      <button data-setter="minutes-plus">+</button>
-                      <button data-setter="minutes-minus">-</button>
-                    </div>
-                    <div class="seconds-set">
-                      <button data-setter="seconds-plus">+</button>
-                      <button data-setter="seconds-minus">-</button>
-                    </div>
-                  </div>
-
-                  <div class="circle">
-                    <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-                       <g transform="translate(110,110)">
-                          <circle r="100" class="e-c-base"/>
-                          <g transform="rotate(-90)">
-                             <circle r="100" class="e-c-progress"/>
-                             <g id="e-pointer">
-                                <circle cx="100" cy="0" r="8" class="e-c-pointer"/>
-                             </g>
-                          </g>
-                       </g>
-                    </svg>
-                  </div>
-
-                  <div class="controlls">
-                    <div class="display-remain-time">00:30</div>
-                    <button class="play" id="pause"></button>
-                  </div>
+    <div class="dropdown" id="alarmContainer">
+        <button type="button">Alarm</button>
+        <div class="dropdown-content hidden">
+            <div class="setters">
+                <div class="minutes-set">
+                    <button data-setter="minutes-plus">+</button>
+                    <button data-setter="minutes-minus">-</button>
+                </div>
+                <div class="seconds-set">
+                    <button data-setter="seconds-plus">+</button>
+                    <button data-setter="seconds-minus">-</button>
+                </div>
             </div>
+
+            <div class="circle">
+                <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(110,110)">
+                        <circle r="100" class="e-c-base" />
+                        <g transform="rotate(-90)">
+                            <circle r="100" class="e-c-progress" />
+                            <g id="e-pointer">
+                                <circle cx="100" cy="0" r="8" class="e-c-pointer" />
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="controlls">
+                <div class="display-remain-time">00:30</div>
+                <button class="play" id="pause"></button>
+            </div>
+
+            <p>When time is up, all music will automatically stop playing. (Only works if there is music playing from this site.)</p>
         </div>
     </div>
-    <div id="p5Container"></div>
 </div>
 
 <script src="/static/scripts/handleStyle.js" defer></script>

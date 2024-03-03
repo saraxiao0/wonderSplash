@@ -3,6 +3,7 @@ let progressBar = document.querySelector(".e-c-progress");
 let indicator = document.getElementById("e-indicator");
 let pointer = document.getElementById("e-pointer");
 let length = Math.PI * 2 * 100;
+
 progressBar.style.strokeDasharray = length;
 function update(value, timePercent) {
     var offset = -length - (length * value) / timePercent;
@@ -15,33 +16,35 @@ const pauseBtn = document.getElementById("pause");
 const setterBtns = document.querySelectorAll("button[data-setter]");
 let intervalTimer;
 let timeLeft;
-let wholeTime = 0.5 * 60; // manage this to set the whole time
+let wholeTime = 0; // manage this to set the whole time
 let isPaused = false;
 let isStarted = false;
 
 update(wholeTime, wholeTime); //refreshes progress bar
 displayTimeLeft(wholeTime);
+
 function changeWholeTime(seconds) {
     if (wholeTime + seconds > 0) {
         wholeTime += seconds;
         update(wholeTime, wholeTime);
     }
 }
+
 for (var i = 0; i < setterBtns.length; i++) {
     setterBtns[i].addEventListener("click", function (event) {
         var param = this.dataset.setter;
         switch (param) {
             case "minutes-plus":
-                changeWholeTime(1 * 60);
+                changeWholeTime(5 * 60);
                 break;
             case "minutes-minus":
-                changeWholeTime(-1 * 60);
+                changeWholeTime(5 * -60);
                 break;
             case "seconds-plus":
-                changeWholeTime(1);
+                changeWholeTime(1 * 60);
                 break;
             case "seconds-minus":
-                changeWholeTime(-1);
+                changeWholeTime(-1 * 60);
                 break;
         }
         displayTimeLeft(wholeTime);
@@ -64,6 +67,9 @@ function timer(seconds) {
             displayTimeLeft(wholeTime);
             pauseBtn.classList.remove("pause");
             pauseBtn.classList.add("play");
+
+            mainScript.musicManager.pauseAll();
+
             return;
         }
         displayTimeLeft(timeLeft);
@@ -101,6 +107,5 @@ function displayTimeLeft(timeLeft) {
     update(timeLeft, wholeTime);
 }
 pauseBtn.addEventListener("click", pauseTimer);
-
 
 mainScript.toggleDropdown("alarmContainer");

@@ -68,10 +68,7 @@ input[type="submit"] {
     border-bottom: 3px solid var(--shadow);
     padding: 3px;
 
-    position: absolute;
     width: 100%;
-    top: 0;
-    bottom: auto;
 
     z-index: 2;
 
@@ -93,13 +90,14 @@ input[type="submit"] {
 
     min-width: 240px;
 
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
 
     overflow: hidden;
+    z-index: -1;
 }
 
 #content .button {
@@ -126,12 +124,12 @@ input[type="submit"] {
     padding: 1px 10px;
     background-color: var(--color2);
 
-    position: absolute;
-    top: auto;
-    bottom: 0;
     width: 100%;
 
     box-sizing: border-box;
+
+    margin-top: auto;
+    align-self: flex-end; 
 }
 
 a {
@@ -147,8 +145,6 @@ a:hover {
 }
 
 #buttonContainer {
-    position: absolute;
-    top: 40px;
 }
 
 button {
@@ -235,4 +231,10 @@ button:hover {
     border-radius: 100%;
     border: none;
     margin: 10px;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }

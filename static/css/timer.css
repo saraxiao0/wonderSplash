@@ -105,7 +105,7 @@ button[data-setter]:hover {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 20px;
     margin: 5px;
-    width: fit-content;
+    width: 300px;
 
     position: relative;
 }

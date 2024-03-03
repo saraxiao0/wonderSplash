@@ -44,6 +44,7 @@ type MusicManager = {
     playSoundtrack: Function;
     pauseSoundtrack: Function;
     toggleSoundtrack: Function;
+    pauseAll: Function;
 };
 
 const musicManager: MusicManager = {
@@ -80,6 +81,15 @@ const musicManager: MusicManager = {
             this.pauseSoundtrack(whichSoundtrack);
         }
     },
+
+    pauseAll: function() {
+        for (let i = 0; i < this.soundtracks.length; i++) {
+            this.soundtracks[i].forEach((howl) => {
+                howl.pause();
+            });
+        }
+        this.activeSoundtracks = [];
+    }
 };
 
 export { musicManager };

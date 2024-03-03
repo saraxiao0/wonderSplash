@@ -2310,6 +2310,14 @@ var mainScript = (() => {
       } else {
         this.pauseSoundtrack(whichSoundtrack);
       }
+    },
+    pauseAll: function() {
+      for (let i = 0; i < this.soundtracks.length; i++) {
+        this.soundtracks[i].forEach((howl) => {
+          howl.pause();
+        });
+      }
+      this.activeSoundtracks = [];
     }
   };
 

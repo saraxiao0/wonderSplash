@@ -9,17 +9,23 @@
     </head>
 
     <body>
-        <div id = "header">
-            <div id = "logo">
-                wonderSplash
-            </div>
+        <div id="lofi-main">
+            <div id="p5Container"></div>
         </div>
 
-        {% block content %}{% endblock %}
+        <div id="content">
+            <div id = "header">
+                <div id = "logo">
+                    wonderSplash
+                </div>
+            </div>
 
-        <div id = "footer">
-            <p class="smalltext">By Sara Xiao, Sruthi Vadakuppa, Aarohi Pahurkar, and Shireen Malhotra</p>
-            <p class="smalltext">InnovateHer 2024</p>
+            {% block content %}{% endblock %}
+
+            <div id = "footer">
+                <p class="smalltext">By Sara Xiao, Sruthi Vadakuppa, Aarohi Pahurkar, and Shireen Malhotra</p>
+                <p class="smalltext">InnovateHer 2024</p>
+            </div>
         </div>
 
         <script src="static/scripts/typeScriptMain.js"></script>
