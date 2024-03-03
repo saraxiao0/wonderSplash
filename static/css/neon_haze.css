@@ -11,4 +11,8 @@ body.neon_haze .neon_haze {
 body.neon_haze .selected {
   border: 5px solid #cc239a;
   background-color: #cf88ba;
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
