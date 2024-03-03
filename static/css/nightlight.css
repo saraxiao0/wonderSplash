@@ -6,3 +6,8 @@
     display: block !important;
     color: #010101;
 }
+
+.selected {
+  border: 5px solid #A7244D;
+  background-color: #D5CEF3;
+}
