@@ -124,3 +124,7 @@ a {
     border: 5px solid gold;
     background-color: #ffd;
 }
+
+#buttonContainer {
+    position:absolute;
+}

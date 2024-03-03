@@ -1,18 +1,21 @@
 {% extends "base.html" %} {% block content %}
 <div id="lofi-main">
-    <ul>
-        <li class="cssToggle liButton"><a>template_example.css</a></li>
-        <li class="cssToggle liButton"><a>template_city1.css</a></li>
-        <li class="cssToggle liButton"><a>sruthis_template.css</a></li>
-        <li class="cssToggle liButton"><a>shireens_template.css</a></li>
-    </ul>
+    <div id="buttonContainer">
+        <ul>
+            <li class="cssToggle liButton"><a>template_example.css</a></li>
+            <li class="cssToggle liButton" id="startStyle"><a>template_city1.css</a></li>
+            <li class="cssToggle liButton"><a>sruthis_template.css</a></li>
+            <li class="cssToggle liButton"><a>shireens_template.css</a></li>
+        </ul>
 
-    <ul>
-        <li class="musicToggle liButton"><a>silence</a></li>
-        <li class="musicToggle liButton"><a>music 1</a></li>
-    </ul>
+        <ul>
+            <li class="musicToggle liButton"><a>silence</a></li>
+            <li class="musicToggle liButton"><a>music 1</a></li>
+        </ul>
+    </div>
 </div>
 
 <script src="/static/scripts/index.js" defer></script>
+<script src="/static/scripts/fish.js" defer></script>
 
 {% endblock %}
