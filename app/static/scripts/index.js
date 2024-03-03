@@ -51,3 +51,19 @@ Array.from(document.querySelectorAll("li.musicToggle")).forEach((li, i) => {
 
 const start = document.getElementById("startStyle");
 toggleStylesheet(start, start.innerText);
+
+function toggleDropdown(containerName) {
+    const button = document.querySelector("#" + containerName + " > button");
+    button.addEventListener("click", (event) => {
+        const dropdown = document.querySelector("#" + containerName + " > ul");
+        if (dropdown.classList.contains("hidden")) {
+            dropdown.classList.remove("hidden");
+        }
+        else {
+            dropdown.classList.add("hidden");
+        }
+    });
+}
+
+toggleDropdown("musicContainer");
+toggleDropdown("styleContainer");

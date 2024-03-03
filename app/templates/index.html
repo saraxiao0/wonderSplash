@@ -1,28 +1,25 @@
 {% extends "base.html" %} {% block content %}
 <div id="lofi-main">
     <div id="buttonContainer">
-        <ul>
-            <li class="cssToggle liButton"><a>template_example.css</a></li>
-            <li class="cssToggle liButton" id="startStyle"><a>template_city1.css</a></li>
-            <li class="cssToggle liButton"><a>sruthis_template.css</a></li>
-            <li class="cssToggle liButton"><a>shireens_template.css</a></li>
-        </ul>
+        <div class="dropdown" id="styleContainer">
+            <button type="button">STYLE</button>
+            <ul class="dropdown-content hidden">
+                <li class="cssToggle liButton"><a>template_example.css</a></li>
+                <li class="cssToggle liButton" id="startStyle"><a>template_city1.css</a></li>
+                <li class="cssToggle liButton"><a>sruthis_template.css</a></li>
+                <li class="cssToggle liButton"><a>shireens_template.css</a></li>
+            </ul>
+        </div>
 
-        <ul>
-            <li class="musicToggle liButton"><a>Silence</a></li>
-            <li class="musicToggle liButton"><a>Harp</a></li>
-            <li class="musicToggle liButton"><a>River</a></li>
-            <li class="musicToggle liButton"><a>Song</a></li>
-        </ul>
-    </div>
-
-    <div class="music-button">
-      <button class="button">MUSIC&nbsp;▼</button>
-      <div class="dropdown-content">
-        <a id="top" href="#">AUDIO 1</a>
-        <a id="middle" href="#">AUDIO 2</a>
-        <a id="bottom" href="#">AUDIO 3</a>
-      </div>
+        <div class="dropdown" id="musicContainer">
+            <button type="button">MUSIC</button>
+            <ul class="dropdown-content hidden">
+                <li class="musicToggle liButton"><a>Silence</a></li>
+                <li class="musicToggle liButton"><a>Harp</a></li>
+                <li class="musicToggle liButton"><a>River</a></li>
+                <li class="musicToggle liButton"><a>Song</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 
