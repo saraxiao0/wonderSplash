@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@400;700&display=swap');
 
 :root {
-    --color1: #fabb33;
-    --colorb: #fcdd55;
+    --color1: #c192ff;
+    --colorb: #eab5ff;
     --color2: #fff;
     --shadow: #ddd;
 }
@@ -112,7 +112,7 @@ a {
 }
 
 .liButton {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 10px;
     display: inline-block;
     margin: 10px;
