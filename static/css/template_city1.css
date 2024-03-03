@@ -22,4 +22,7 @@ body.template_city1 .selected {
   border: 5px solid #0c2c54;
   background-color: #647891;
   color: white;
+  font-family: "Junge", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
