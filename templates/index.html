@@ -24,9 +24,13 @@
         <div class="galaxy1"><a href="https://p5js.org/examples/hello-p5-drawing.html">Code credit: Drawing program by p5.js</a></div>
     </div>
 
+    <button type="button" id="zenModeOff" class="zen hidden">❂</button>
+
     <div id="buttonContainer">
+        <button type="button" id="zenModeOn" class="zen">Zen Mode</button>
+
         <div class="dropdown" id="styleContainer">
-            <button type="button">STYLE</button>
+            <button type="button">Style</button>
             <ul class="dropdown-content hidden">
                 <li class="cssToggle startStyle" p5="fish" css-name="template_city1"><a>Dawn Lake</a></li>
                 <li class="cssToggle" p5="particle" css-name="shireens_template"><a>Hackney Central Station</a></li>
@@ -41,7 +45,7 @@
         </div>
 
         <div class="dropdown" id="musicContainer">
-            <button type="button">MUSIC</button>
+            <button type="button">Music</button>
             <ul class="dropdown-content hidden">
                 <li class="musicToggle" music-id="0"><a>Harp</a></li>
                 <li class="musicToggle" music-id="1"><a>White Noise</a></li>
@@ -50,7 +54,7 @@
         </div>
 
         <div class="dropdown" id="alarmContainer">
-            <button type="button">ALARM</button>
+            <button type="button">Alarm</button>
             <div class="dropdown-content hidden">
                 <div class="setters">
                     <div class="minutes-set">
@@ -90,5 +94,6 @@
 <script src="/static/scripts/handleStyle.js" defer></script>
 <script src="/static/scripts/handleMusic.js" defer></script>
 <script src="/static/scripts/timer.js" defer></script>
+<script src="/static/scripts/zen.js" defer></script>
 
 {% endblock %}
