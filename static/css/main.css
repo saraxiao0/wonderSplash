@@ -117,7 +117,7 @@ input[type="submit"] {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 /* Footer */
@@ -214,4 +214,5 @@ button:hover {
     right: 5px;
     font-size: 0.8rem;
     display: none;
+    z-index: 10;
 }

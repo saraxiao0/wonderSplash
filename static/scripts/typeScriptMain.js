@@ -2317,7 +2317,7 @@ var mainScript = (() => {
   function toggleDropdown(containerName) {
     const button = document.querySelector("#" + containerName + " > button");
     button?.addEventListener("click", (event) => {
-      const dropdown = document.querySelector("#" + containerName + " > ul");
+      const dropdown = document.querySelector("#" + containerName + " > .dropdown-content");
       if (dropdown === null) {
         return;
       }

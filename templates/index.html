@@ -1,6 +1,11 @@
 {% extends "base.html" %} {% block content %}
 <div id="lofi-main">
     <div id="imageCredits">
+        <div class="template_city1">
+            <a href="https://openprocessing.org/sketch/810180">Code credit: Flock of birds by Naomi Tsutae</a>
+            <br />
+            <a href="https://p5js.org/examples/simulate-flocking.html">Code credit: Flocking by p5.js and Craig Reynolds</a>
+        </div>
         <div class="shireens_template">
             <a href="https://unsplash.com/photos/black-and-brown-wooden-bench-uchsMfei3RU">Image credit: Jonathan Formento from Unsplash</a>
             <br />
@@ -43,11 +48,47 @@
                 <li class="musicToggle startMusic" music-id="2"><a>Lofi Chill</a></li>
             </ul>
         </div>
+
+        <div class="dropdown" id="alarmContainer">
+            <button type="button">ALARM</button>
+            <div class="dropdown-content hidden">
+                <div class="setters">
+                    <div class="minutes-set">
+                      <button data-setter="minutes-plus">+</button>
+                      <button data-setter="minutes-minus">-</button>
+                    </div>
+                    <div class="seconds-set">
+                      <button data-setter="seconds-plus">+</button>
+                      <button data-setter="seconds-minus">-</button>
+                    </div>
+                  </div>
+
+                  <div class="circle">
+                    <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+                       <g transform="translate(110,110)">
+                          <circle r="100" class="e-c-base"/>
+                          <g transform="rotate(-90)">
+                             <circle r="100" class="e-c-progress"/>
+                             <g id="e-pointer">
+                                <circle cx="100" cy="0" r="8" class="e-c-pointer"/>
+                             </g>
+                          </g>
+                       </g>
+                    </svg>
+                  </div>
+
+                  <div class="controlls">
+                    <div class="display-remain-time">00:30</div>
+                    <button class="play" id="pause"></button>
+                  </div>
+            </div>
+        </div>
     </div>
     <div id="p5Container"></div>
 </div>
 
 <script src="/static/scripts/handleStyle.js" defer></script>
 <script src="/static/scripts/handleMusic.js" defer></script>
+<script src="/static/scripts/timer.js" defer></script>
 
 {% endblock %}

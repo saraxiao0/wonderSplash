@@ -7,10 +7,12 @@ function setup() {
 
     flock = new Flock();
     // Add an initial set of boids into the system
-    for (let i = 0; i < 100; i++) {
-        let b = new Boid(width / 2, height / 2);
+    for (let i = 0; i < 70; i++) {
+        let b = new Boid(random(width), random(height));
         flock.addBoid(b);
     }
+
+    // frameRate(30); // causes jitter
 }
 
 function draw() {
@@ -25,7 +27,7 @@ function mouseDragged() {
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
-  }
+}
 
 // The Nature of Code
 // Daniel Shiffman
@@ -57,7 +59,7 @@ Flock.prototype.addBoid = function (b) {
 // Methods for Separation, Cohesion, Alignment added
 
 function Boid(x, y) {
-    this.acceleration = createVector(0, 0);
+    this.acceleration = createVector(random(-1, 1), random(-1, 1)).normalize();
     this.velocity = createVector(random(-1, 1), random(-1, 1));
     this.position = createVector(x, y);
     this.r = 3.0;
@@ -83,9 +85,9 @@ Boid.prototype.flock = function (boids) {
     let ali = this.align(boids); // Alignment
     let coh = this.cohesion(boids); // Cohesion
     // Arbitrarily weight these forces
-    sep.mult(1.5);
-    ali.mult(1.0);
-    coh.mult(1.0);
+    sep.mult(1.1);
+    ali.mult(1);
+    coh.mult(1);
     // Add the force vectors to acceleration
     this.applyForce(sep);
     this.applyForce(ali);
@@ -117,18 +119,25 @@ Boid.prototype.seek = function (target) {
 };
 
 Boid.prototype.render = function () {
-    // Draw a triangle rotated in the direction of velocity
+    // Draw a GOOSE rotated in the direction of velocity
     let theta = this.velocity.heading() + radians(90);
     fill(127);
-    stroke(200);
+    stroke(0);
+    strokeWeight(2);
     push();
     translate(this.position.x, this.position.y);
     rotate(theta);
-    beginShape();
-    vertex(0, -this.r * 2);
-    vertex(-this.r, this.r * 2);
-    vertex(this.r, this.r * 2);
-    endShape(CLOSE);
+
+    const scaleFac = map(1.01 * (this.position.y / height), 0.1, 1, 0.35, 0.9);
+    scale(scaleFac);
+
+    let i = 0;
+    let r = (sin((frameCount) * 0.1) * PI) / 4;
+    for (let j = 0; j < 2; j++) {
+        line(0, 0, cos(r) * 14, sin(r) * 14);
+        r = PI - r;
+    }
+
     pop();
 };
 
