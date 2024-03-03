@@ -20,7 +20,7 @@ function addStylesheet(stylesheetName) {
     link.type = "text/css";
     link.href = href;
     document.getElementsByTagName("head")[0].appendChild(link);
-    link.disabled = true;
+    link.setAttribute("disabled", "true");
 }
 
 // from https://stackoverflow.com/a/35867833
@@ -35,12 +35,12 @@ function toggleStylesheet(li, stylesheetName) {
     // delete other stylesheet
     const existingStylesheet = document.getElementById(selectedStyle);
     if (existingStylesheet !== null) {
-        existingStylesheet.disabled = true;
+        existingStylesheet.setAttribute("disabled", "true");
     }
 
     // add this stylesheet
     selectedStyle = stylesheetName;
-    document.getElementById(selectedStyle).disabled = false;
+    document.getElementById(selectedStyle).removeAttribute("disabled");
 
     const scriptName = li.getAttribute("p5");
     addP5(scriptName);
