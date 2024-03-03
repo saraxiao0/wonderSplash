@@ -10,6 +10,7 @@ body.shireens_template .shireens_template {
     color: #010101;
 }
 
-.selected {
+body.shireens_template .selected {
   border: 5px solid #dc245c;
+  background-color: #d48aa0;
 }

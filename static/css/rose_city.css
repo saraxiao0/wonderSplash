@@ -6,6 +6,11 @@ body.rose_city .rose_city {
     display: block !important;
     color: #010101;
 }
-.selected {
+
+body.rose_city .selected {
   border: 5px solid #c42494;
+  background-color: #c78bb5;
 }
+
+
+

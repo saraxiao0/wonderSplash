@@ -7,6 +7,7 @@ body.figurine .figurine {
     color: #010101;
 }
 
-.selected {
+body.figurine .selected {
   border: 5px solid #49886f;
+  background-color: #6a8a7d;
 }
