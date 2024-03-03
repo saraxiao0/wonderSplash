@@ -20,7 +20,7 @@ body.galaxy1 .selected {
   border: 5px solid #845b5c;
   background-color: #827172;
   color: white;
-  font-family: "Orbitron", monospace;
+  font-family: Orbitron, monospace;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
