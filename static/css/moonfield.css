@@ -11,9 +11,7 @@ body.moonfield .selected {
   border: 5px solid #540464;
   background-color: #5a425e;
   color: white;
-  .space-mono-regular {
-    font-family: "Space Mono", monospace;
-    font-weight: 400;
-    font-style: normal;
-  }
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
 }
