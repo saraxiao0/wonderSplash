@@ -1,3 +1,14 @@
 #lofi-main {
     background-image: url("/static/assets/city1.jpg");
 }
+
+button {
+    background-color: rgba(100, 200, 250, 0.7);
+}
+button:hover {
+    background-color: rgba(100, 200, 250, 1);
+}
+
+.dropdown-content li:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
