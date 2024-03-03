@@ -6,8 +6,6 @@ function setup() {
   const myCanvas = createCanvas(sketchWidth, sketchHeight);
   myCanvas.parent('lofi-main');
   
-  createP("Drag the mouse to generate new boids.");
-
   flock = new Flock();
   // Add an initial set of boids into the system
   for (let i = 0; i < 100; i++) {

@@ -9,6 +9,18 @@ function selectElement(element, query) {
    element.classList.add("selected");
 }
 
+function addStylesheet(stylesheetName) {
+    const href = "/static/css/" + stylesheetName;
+
+    const link = document.createElement("link");
+    link.id = stylesheetName;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = href;
+    document.getElementsByTagName("head")[0].appendChild(link);
+    link.disabled = true;
+}
+
 // from https://stackoverflow.com/a/35867833
 function toggleStylesheet(li, stylesheetName) {
     selectElement(li, "li.cssToggle");
@@ -18,29 +30,16 @@ function toggleStylesheet(li, stylesheetName) {
         return;
     }
 
-    const existingStylesheet = document.getElementById(selectedStyle);
-    selectedStyle = stylesheetName;
-    const href = "/static/css/" + stylesheetName;
-
     // delete other stylesheet
+    const existingStylesheet = document.getElementById(selectedStyle);
     if (existingStylesheet !== null) {
         existingStylesheet.disabled = true;
     }
 
     // add this stylesheet
-    const link = document.createElement("link");
-    link.id = stylesheetName;
-    link.rel = "stylesheet";
-    link.type = "text/css";
-    link.href = href;
-    document.getElementsByTagName("head")[0].appendChild(link);
+    selectedStyle = stylesheetName;
+    document.getElementById(selectedStyle).disabled = false;
 }
-
-Array.from(document.querySelectorAll("li.cssToggle")).forEach((li) => {
-    li.addEventListener("click", () => {
-        toggleStylesheet(li, li.innerText);
-    });
-});
 
 Array.from(document.querySelectorAll("li.musicToggle")).forEach((li, i) => {
     li.addEventListener("click", () => {
@@ -49,6 +48,12 @@ Array.from(document.querySelectorAll("li.musicToggle")).forEach((li, i) => {
     });
 });
 
+Array.from(document.querySelectorAll("li.cssToggle")).forEach((li) => {
+    addStylesheet(li.innerText);
+    li.addEventListener("click", () => {
+        toggleStylesheet(li, li.innerText);
+    });
+});
 const start = document.getElementById("startStyle");
 toggleStylesheet(start, start.innerText);
 
@@ -64,6 +69,5 @@ function toggleDropdown(containerName) {
         }
     });
 }
-
 toggleDropdown("musicContainer");
 toggleDropdown("styleContainer");
