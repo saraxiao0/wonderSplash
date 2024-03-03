@@ -6,3 +6,10 @@
     display: block !important;
     color: #010101;
 }
+
+.selected {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
