@@ -45,15 +45,15 @@ function toggleStylesheet(li, stylesheetName) {
 }
 
 function addP5(scriptName) {
-    const oldFrame = document.getElementById("p5Container");
-    oldFrame.innerHTML = "";
+    const p5Container = document.getElementById("p5Container");
+    p5Container.innerHTML = "";
 
     var ifrm = document.createElement("iframe");
     ifrm.style.width = "100%";
     ifrm.style.height = "100%";
     ifrm.id = "p5Frame";
     ifrm.setAttribute("src", "/static/p5/" + scriptName + ".html");
-    oldFrame.appendChild(ifrm);
+    p5Container.appendChild(ifrm);
 }
 
 Array.from(document.querySelectorAll("li.musicToggle")).forEach((li, i) => {

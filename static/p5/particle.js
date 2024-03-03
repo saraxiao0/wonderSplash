@@ -42,9 +42,9 @@ class Particle {
 let particles = [];
 
 function setup() {
-    sketchWidth = document.getElementById("p5Container").offsetWidth;
-    sketchHeight = document.getElementById("p5Container").offsetHeight;
-    const myCanvas = createCanvas(sketchWidth, sketchHeight);
+    sketchWidth = document.body.clientWidth;
+    sketchHeight = document.body.clientHeight;
+    createCanvas(sketchWidth, sketchHeight);
 
     for (let i = 0; i < width / 10; i++) {
         particles.push(new Particle());

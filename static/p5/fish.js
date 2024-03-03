@@ -1,9 +1,9 @@
 let flock;
 
 function setup() {
-    sketchWidth = document.getElementById("p5Container").offsetWidth;
-    sketchHeight = document.getElementById("p5Container").offsetHeight;
-    const myCanvas = createCanvas(sketchWidth, sketchHeight);
+    sketchWidth = document.body.clientWidth;
+    sketchHeight = document.body.clientHeight;
+    createCanvas(sketchWidth, sketchHeight);
 
     flock = new Flock();
     // Add an initial set of boids into the system
