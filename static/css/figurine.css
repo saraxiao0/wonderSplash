@@ -1,5 +1,5 @@
 body.figurine #lofi-main {
-    background-image: url("/static/assets/figurine.jpg");
+    background-image: url("../assets/figurine.jpg");
 }
 
 body.figurine .figurine {

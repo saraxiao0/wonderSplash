@@ -1,5 +1,5 @@
 body.moonfield #lofi-main {
-    background-image: url("/static/assets/moonfield.jpg");
+    background-image: url("../assets/moonfield.jpg");
 }
 
 body.moonfield .moonfield {

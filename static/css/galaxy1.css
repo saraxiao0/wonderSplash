@@ -1,5 +1,5 @@
 body.galaxy1 #lofi-main {
-    background-image: url("/static/assets/galaxy1.jpg");
+    background-image: url("../assets/galaxy1.jpg");
 }
 
 body.galaxy1 .galaxy1 {

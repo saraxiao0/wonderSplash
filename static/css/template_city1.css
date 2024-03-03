@@ -1,5 +1,5 @@
 body.template_city1 #lofi-main {
-    background-image: url("/static/assets/city1.jpg");
+    background-image: url("../assets/city1.jpg");
 }
 
 body.template_city1 button {

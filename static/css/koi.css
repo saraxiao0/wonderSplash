@@ -1,5 +1,5 @@
 body.koi #lofi-main {
-    background-image: url("/static/assets/koi.jpg");
+    background-image: url("../assets/koi.jpg");
 }
 
 body.koi .koi {

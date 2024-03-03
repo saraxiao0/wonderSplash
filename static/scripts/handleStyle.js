@@ -12,7 +12,7 @@ function selectElement(element, query) {
 }
 
 function addStylesheet(stylesheetName) {
-    const href = "/static/css/" + stylesheetName + ".css";
+    const href = "./static/css/" + stylesheetName + ".css";
 
     const link = document.createElement("link");
     link.id = stylesheetName;
@@ -53,7 +53,7 @@ function addP5(scriptName) {
     ifrm.style.width = "100%";
     ifrm.style.height = "100%";
     ifrm.id = "p5Frame";
-    ifrm.setAttribute("src", "/static/p5/" + scriptName + ".html");
+    ifrm.setAttribute("src", "./static/p5/" + scriptName + ".html");
     p5Container.appendChild(ifrm);
 }
 

@@ -1,5 +1,5 @@
 body.rose_city #lofi-main {
-    background-image: url("/static/assets/rose_city.jpg");
+    background-image: url("../assets/rose_city.jpg");
 }
 
 body.rose_city .rose_city {

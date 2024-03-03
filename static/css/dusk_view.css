@@ -1,5 +1,5 @@
 body.dusk_view #lofi-main {
-    background-image: url("/static/assets/dusk_view.jpg");
+    background-image: url("../assets/dusk_view.jpg");
 }
 
 body.dusk_view .dusk_view {

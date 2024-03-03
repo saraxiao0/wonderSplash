@@ -1,1 +1,0 @@
-cd scriptFolder; ./build; cd ..; flask run

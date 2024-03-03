@@ -1,5 +1,5 @@
 body.nightlight #lofi-main {
-    background-image: url("/static/assets/nightlight.jpg");
+    background-image: url("../assets/nightlight.jpg");
 }
 
 body.nightlight .nightlight {

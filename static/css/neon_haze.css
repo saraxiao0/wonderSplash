@@ -1,5 +1,5 @@
 body.neon_haze #lofi-main {
-    background-image: url("/static/assets/neon_haze.jpg");
+    background-image: url("../assets/neon_haze.jpg");
     filter: blur(3px);
 }
 

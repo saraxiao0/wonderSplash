@@ -29,11 +29,11 @@ function Drop(x, y, sp) {
     var s = sp;
 
     this.displ = function () {
-        var mx = map(mouseX, 0, width, 7, 14);
+        var mx = map(mouseX, 0, width, 7, 21);
 
         y1 = y1 + s * mx;
         x2 = x1;
-        y2 = y1 + 50;
+        y2 = y1 + 5 * mx;
 
         stroke(200);
         line(x1, y1, x2, y2);
