@@ -2286,7 +2286,6 @@ var mainScript = (() => {
     activeSoundtracks: [],
     soundtracks: [introMusic, waterMusic, swimmingMusic],
     playSoundtrack: function(whichSoundtrack) {
-      console.log("play", whichSoundtrack);
       this.soundtracks[whichSoundtrack].forEach((howl) => {
         let maxVolume = howl["maxVolume"];
         if (maxVolume === void 0) {
@@ -2300,7 +2299,6 @@ var mainScript = (() => {
       this.activeSoundtracks.push(whichSoundtrack);
     },
     pauseSoundtrack: function(whichSoundtrack) {
-      console.log("paused", whichSoundtrack);
       this.soundtracks[whichSoundtrack].forEach((howl) => {
         howl.pause();
       });

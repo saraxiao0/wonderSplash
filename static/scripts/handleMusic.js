@@ -7,11 +7,16 @@ function toggleSelect(element) {
     }
 }
 
-Array.from(document.querySelectorAll("li.musicToggle")).forEach((li, i) => {
+Array.from(document.querySelectorAll("li.musicToggle")).forEach((li) => {
     li.addEventListener("click", () => {
-        mainScript.musicManager.toggleSoundtrack(i);
+        const musicId = li.getAttribute("music-id");
+        mainScript.musicManager.toggleSoundtrack(musicId);
         toggleSelect(li);
     });
 });
 
 mainScript.toggleDropdown("musicContainer");
+
+const startMusic = document.querySelector(".startMusic");
+mainScript.musicManager.toggleSoundtrack(startMusic.getAttribute("music-id"));
+toggleSelect(startMusic);

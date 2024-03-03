@@ -51,7 +51,6 @@ const musicManager: MusicManager = {
     soundtracks: [introMusic, waterMusic, swimmingMusic],
 
     playSoundtrack: function (whichSoundtrack: number) {
-        console.log("play", whichSoundtrack);
         this.soundtracks[whichSoundtrack].forEach((howl) => {
             let maxVolume = howl["maxVolume"];
             if (maxVolume === undefined) {
@@ -68,7 +67,6 @@ const musicManager: MusicManager = {
     },
 
     pauseSoundtrack: function (whichSoundtrack: number) {
-        console.log("paused", whichSoundtrack);
         this.soundtracks[whichSoundtrack].forEach((howl) => {
             howl.pause();
         });
