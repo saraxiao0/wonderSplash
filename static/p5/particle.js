@@ -1,3 +1,25 @@
+// an array to add multiple particles
+let particles = [];
+
+function setup() {
+    sketchWidth = document.body.clientWidth;
+    sketchHeight = document.body.clientHeight;
+    createCanvas(sketchWidth, sketchHeight);
+
+    for (let i = 0; i < width / 10; i++) {
+        particles.push(new Particle());
+    }
+}
+
+function draw() {
+    clear();
+    for (let i = 0; i < particles.length; i++) {
+        particles[i].createParticle();
+        particles[i].moveParticle();
+        particles[i].joinParticles(particles.slice(i));
+    }
+}
+
 // this class describes the properties of a single particle.
 class Particle {
     // setting the co-ordinates, radius and the
@@ -35,27 +57,5 @@ class Particle {
                 line(this.x, this.y, element.x, element.y);
             }
         });
-    }
-}
-
-// an array to add multiple particles
-let particles = [];
-
-function setup() {
-    sketchWidth = document.body.clientWidth;
-    sketchHeight = document.body.clientHeight;
-    createCanvas(sketchWidth, sketchHeight);
-
-    for (let i = 0; i < width / 10; i++) {
-        particles.push(new Particle());
-    }
-}
-
-function draw() {
-    clear();
-    for (let i = 0; i < particles.length; i++) {
-        particles[i].createParticle();
-        particles[i].moveParticle();
-        particles[i].joinParticles(particles.slice(i));
     }
 }

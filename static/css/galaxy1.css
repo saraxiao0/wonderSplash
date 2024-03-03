@@ -1,0 +1,8 @@
+#lofi-main {
+    background-image: url("/static/assets/galaxy1.jpg");
+}
+
+.galaxy1 {
+    display: block !important;
+    color: #777;
+}
