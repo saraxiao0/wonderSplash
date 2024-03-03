@@ -3,10 +3,10 @@ let selectedMusic = -1;
 
 function selectElement(element, query) {
     Array.from(document.querySelectorAll(query)).forEach((e) => {
-    e.classList.remove("selected");
-   });
+        e.classList.remove("selected");
+    });
 
-   element.classList.add("selected");
+    element.classList.add("selected");
 }
 
 function addStylesheet(stylesheetName) {
@@ -39,6 +39,21 @@ function toggleStylesheet(li, stylesheetName) {
     // add this stylesheet
     selectedStyle = stylesheetName;
     document.getElementById(selectedStyle).disabled = false;
+
+    const scriptName = li.getAttribute("p5");
+    addP5(scriptName);
+}
+
+function addP5(scriptName) {
+    const oldFrame = document.getElementById("p5Container");
+    oldFrame.innerHTML = "";
+
+    var ifrm = document.createElement("iframe");
+    ifrm.style.width = "100%";
+    ifrm.style.height = "100%";
+    ifrm.id = "p5Frame";
+    ifrm.setAttribute("src", "/static/p5/" + scriptName + ".html");
+    oldFrame.appendChild(ifrm);
 }
 
 Array.from(document.querySelectorAll("li.musicToggle")).forEach((li, i) => {
@@ -63,8 +78,7 @@ function toggleDropdown(containerName) {
         const dropdown = document.querySelector("#" + containerName + " > ul");
         if (dropdown.classList.contains("hidden")) {
             dropdown.classList.remove("hidden");
-        }
-        else {
+        } else {
             dropdown.classList.add("hidden");
         }
     });

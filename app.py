@@ -1,8 +1,6 @@
-# from flask import render_template, flash, redirect, url_for, request
-from flask import render_template
-from app import app_var
+from flask import Flask, render_template
 
-import sys
+app_var = Flask(__name__)
 
 @app_var.route('/', methods=['GET', 'POST'])
 @app_var.route('/index', methods=['GET', 'POST'])
