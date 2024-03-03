@@ -17,3 +17,7 @@ body.template_city1 .template_city1 {
     display: block !important;
     color: #010101;
 }
+
+.selected {
+  border: 5px solid #0c2c54;
+}
